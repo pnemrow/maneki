@@ -26,11 +26,9 @@ app.use(
 
 app.setHandler({
     LAUNCH() {
-        return this.toIntent('HelloWorldIntent');
-    },
-
-    HelloWorldIntent() {
-        this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
+        let expectedFamilyNamePrompt = "Welcome to Maneki Family Bank, to get registered please tell me you family name.";
+        let expectedFamilyNameReprompt = "You know, the last name for your family?";
+        return this.ask(expectedFamilyNamePrompt, expectedFamilyNameReprompt);
     },
 
     MyNameIsIntent() {
