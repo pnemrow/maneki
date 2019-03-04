@@ -26,9 +26,9 @@ app.use(
 
 app.setHandler({
     LAUNCH() {
-        let expectedFamilyNamePrompt = "Welcome to Maneki Family Bank, to get registered please tell me you family name.";
-        let expectedFamilyNameReprompt = "You know, the last name for your family?";
-        return this.ask(expectedFamilyNamePrompt, expectedFamilyNameReprompt);
+        this.$speech.addText('Welcome to Maneki Family Bank, to get registered please tell me you family name.');
+        this.$reprompt.addText('You know, the last name for your family?');
+        return this.ask(this.$speech, this.$reprompt);
     },
 
     MyNameIsIntent() {
